@@ -8,7 +8,7 @@ A React component for creating share by email links.
 
 ## How to use
 
-```js
+```jsx
 import EmailShare from 'react-email-share-link'
 
 //...
