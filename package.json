@@ -1,6 +1,6 @@
 {
   "name": "react-email-share-link",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A React component for creating share by email links.",
   "main": "dist/index.js",
   "scripts": {
