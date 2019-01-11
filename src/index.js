@@ -7,7 +7,7 @@ class EmailShare extends React.Component {
 			email: props.email,
 			subject: props.subject,
 			body: props.body
-		}
+		};
 	}
 	componentDidMount() {
 		if (!this.state.body) {
@@ -17,24 +17,20 @@ class EmailShare extends React.Component {
 		}
 	}
 	componentDidUpdate(prevProps) {
+		let state = {};
 		if (this.props.email !== prevProps.email) {
-			this.setState({
-				email: this.props.email
-			});
+			state.email = this.props.email;
 		}
 		if (this.props.body !== prevProps.body) {
-			this.setState({
-				body: this.props.body
-			});
+			state.body = this.props.body;
 		}
 		if (this.props.subject !== prevProps.subject) {
-			this.setState({
-				subject: this.props.subject
-			});
+			state.subject = this.state.subject
 		}
+		this.setState(state);
 	}
 	render() {
-		let query = []
+		let query = [];
 		if (this.state.subject) query.push(`subject=${encodeURIComponent(this.state.subject)}`);
 		if (this.state.body) query.push(`body=${encodeURIComponent(this.state.body)}`);
 		return this.props.children(`mailto:${this.state.email || ''}${(query.length ? `?${query.join('&')}` : ``)}`);

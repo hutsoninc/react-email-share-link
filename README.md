@@ -22,10 +22,6 @@ import EmailShare from 'react-email-share-link'
 
 _**NOTE:** If you don't pass a `body` prop, it will default to `document.location.href`. If a `body` is provided, don't forget to include a link to the page._
 
-## Authors
-
-* **Austin Gordon** - *Development* - [GitHub](https://github.com/AustinLeeGordon)
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+MIT © [Hutson Inc](https://www.hutsoninc.com)

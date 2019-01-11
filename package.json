@@ -8,15 +8,12 @@
     "build": "set NODE_ENV=production && babel src --out-dir dist",
     "prepublishOnly": "npm run build"
   },
-  "author": {
-    "name": "Austin Gordon",
-    "email": "agordon@hutsoninc.com",
-    "url": "https://github.com/AustinLeeGordon"
-  },
-  "repository": {
-    "url": "https://github.com/hutsoninc/react-email-share-link.git",
-    "type": "git"
-  },
+  "keywords": [
+    "email",
+    "component",
+    "react",
+    "mailto"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -25,17 +22,18 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "parcel-bundler": "^1.9.0",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "styled-jsx": "^2.2.6",
-    "styled-jsx-plugin-postcss": "^0.1.3"
+    "parcel-bundler": "^1.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   },
-  "license": "MIT",
-  "keywords": [
-    "email",
-    "component",
-    "react",
-    "mailto"
-  ]
+  "author": {
+    "name": "Austin Gordon",
+    "email": "gordon.austin2@gmail.com",
+    "url": "https://www.austinleegordon.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hutsoninc/react-email-share-link.git"
+  },
+  "license": "MIT"
 }
