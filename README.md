@@ -11,8 +11,6 @@ A React component for creating share by email links.
 ```jsx
 import EmailShare from 'react-email-share-link'
 
-//...
-
 <EmailShare email="mickey@mouse.com" subject="Your subject" body="Your message, including the link to this page">
    {link => (
       <a href={link} data-rel="external">Share this by email</a>

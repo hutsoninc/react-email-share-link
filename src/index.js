@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { stringify } from 'querystring';
 
 class EmailShare extends React.Component {
 	constructor(props) {
@@ -17,24 +19,34 @@ class EmailShare extends React.Component {
 		}
 	}
 	componentDidUpdate(prevProps) {
-		let state = {};
 		if (this.props.email !== prevProps.email) {
-			state.email = this.props.email;
+			this.setState({
+				email: this.props.email
+			});
 		}
 		if (this.props.body !== prevProps.body) {
-			state.body = this.props.body;
+			this.setState({
+				body: this.props.body
+			});
 		}
 		if (this.props.subject !== prevProps.subject) {
-			state.subject = this.state.subject
+			this.setState({
+				subject: this.props.subject
+			});
 		}
-		this.setState(state);
 	}
 	render() {
-		let query = [];
-		if (this.state.subject) query.push(`subject=${encodeURIComponent(this.state.subject)}`);
-		if (this.state.body) query.push(`body=${encodeURIComponent(this.state.body)}`);
-		return this.props.children(`mailto:${this.state.email || ''}${(query.length ? `?${query.join('&')}` : ``)}`);
+		let query = {};
+		if (this.state.subject) query.subject = this.state.subject;
+		if (this.state.body) query.body = this.state.body;
+		return this.props.children(`mailto:${this.state.email || ''}?${stringify(query)}`);
 	}
 }
+
+EmailShare.propTypes = {
+	body: PropTypes.string,
+	email: PropTypes.string,
+	subject: PropTypes.string
+};
 
 export default EmailShare;
